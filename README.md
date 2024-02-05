@@ -1,6 +1,2 @@
-<<<<<<< HEAD
 Fix my code is a new type of project, where we’ll jump into an existing code base and fix it!
 Sometimes you will know the language, sometimes not. you are not to recode everything, just fix it!
-=======
-# Fix-my-code-1
->>>>>>> origin/master
