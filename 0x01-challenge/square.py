@@ -1,27 +1,63 @@
 #!/usr/bin/python3
 
-class square():
-    width = 0
-    height = 0
+class Square:
+    """
+    A class representing a square shape.
+    
+    Attributes:
+    - side: The side length of the square.
+    """
 
-    def __init__(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
+    def __init__(self, side=0):
+        """
+        Initializes a square with the given side length.
+        
+        Args:
+        - side: The side length of the square.
+        """
+        self.side = side
 
-    def area_of_my_square(self):
-        """ Area of the square """
-        return self.width * self.width
+    @property
+    def side(self):
+        return self._side
 
-    def PermiterOfMySquare(self):
-        return (self.width * 2) + (self.height * 2)
+    @side.setter
+    def side(self, value):
+        if value < 0:
+            raise ValueError("Side length must be non-negative")
+        self._side = value
+
+    @property
+    def area(self):
+        """
+        Calculates the area of the square.
+        
+        Returns:
+        The area of the square.
+        """
+        return self.side ** 2
+
+    @property
+    def perimeter(self):
+        """
+        Calculates the perimeter of the square.
+        
+        Returns:
+        The perimeter of the square.
+        """
+        return self.side * 4
 
     def __str__(self):
-        return "{}/{}".format(self.width, self.height)
-
+        """
+        Returns a string representation of the square.
+        
+        Returns:
+        A string representation of the square in the format 'side_length'.
+        """
+        return str(self.side)
 
 if __name__ == "__main__":
-
-    s = square(width=12, height=9)
+    s = Square(side=12)
     print(s)
-    print(s.area_of_my_square())
-    print(s.PermiterOfMySquare())
+    print("Area:", s.area)
+    print("Perimeter:", s.perimeter)
