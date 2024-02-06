@@ -17,8 +17,8 @@ class Square:
         - width: The width of the square.
         - height: The height of the square.
         """
-        self.width = width
-        self.height = height
+        self.width = width  # Corrected variable names
+        self.height = height  # Corrected variable names
 
     def area_of_my_square(self):
         """
@@ -46,6 +46,7 @@ class Square:
         A string representation of the square in the format 'width/height'.
         """
         return "{}/{}".format(self.width, self.height)
+
 
 if __name__ == "__main__":
     s = Square(width=12, height=9)
